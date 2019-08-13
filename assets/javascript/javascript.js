@@ -58,9 +58,9 @@ var game = {
         $('#start').remove();
 
         for (var i = 0; i < questions.length; i++) {
-            $('#subwrap').append('<h2>' + questions[i].question+'</h2');
-            for (var j = 0; j < questions[i].answers.length; j++){
-                $("#subwrap").append("<input type ='radio' name='question-" +  i+ "' value='" + questions[i].answers[j]+ "'>" + questions[i].answers[j])
+            $('#subwrap').append('<h2>' + questions[i].question + '</h2');
+            for (var j = 0; j < questions[i].answers.length; j++) {
+                $("#subwrap").append("<input type ='radio' name='question-" + i + "' value='" + questions[i].answers[j] + "'>" + questions[i].answers[j])
             }
         }
 
@@ -125,12 +125,12 @@ var game = {
 
         this.result();
     },
-    result: function() {
+    result: function () {
         clearInterval(timer);
         $('#subwrap h2').remove();
         $('#subwrap').html("<h2> All Done!</h2>");
-        $('#subwrap').append("<h3>Correct Answers: " + this.correct +"<h3>");
-        $('#subwrap').append("<h3>Incorrect Answers: " + this.correct +"<h3>");
-        $('#subwrap').append("<h3>Unanswered: "+(questions.length-(this.incorrect+this.correct))+"</h3>")
+        $('#subwrap').append("<h3>Correct Answers: " + this.correct + "<h3>");
+        $('#subwrap').append("<h3>Incorrect Answers: " + this.correct + "<h3>");
+        $('#subwrap').append("<h3>Unanswered: " + (questions.length - (this.incorrect + this.correct)) + "</h3>")
     }
 }
